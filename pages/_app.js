@@ -5,6 +5,9 @@ import App from 'next/app'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import '../assets/css/style.css';
+import '../assets/css/vendor/bootstrap.min.css';
+import '../assets/css/App.css';
 
 export default class MyApp extends App {
 	static async getInitialProps({ Component, ctx }) {
@@ -48,11 +51,11 @@ export default class MyApp extends App {
 						content="width=device-width, initial-scale=1.0"
 					/>
 				</Head>
-				<ThemeProvider theme={theme}>
-					<CssBaseline>
+				{/* <ThemeProvider theme={theme}> */}
+					{/* <CssBaseline> */}
 						<Component {...pageProps} />
-					</CssBaseline>
-				</ThemeProvider>
+					{/* </CssBaseline> */}
+				{/* </ThemeProvider> */}
 			</>
 		)
 	}
