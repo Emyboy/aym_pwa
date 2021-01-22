@@ -45,7 +45,7 @@ export default function EachPost({
                     //     state: data
                     // }}
                     >
-                        <img src="https://cdn4.wpbeginner.com/wp-content/uploads/2018/07/whatisblog.png" alt="Post Images" />
+                        <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU' || data.image } alt="Post Images" />
                     </Link>
                 </div>
             }

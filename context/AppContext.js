@@ -144,6 +144,7 @@ export class AppContextProvider extends React.Component {
     };
 
     openGoogleLogin() {
+        console.log('opening google')
         fire.auth().signInWithPopup(googleProvider)
             .then(result => {
                 var token = result.credential.accessToken;

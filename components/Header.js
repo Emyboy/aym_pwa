@@ -1,10 +1,6 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 import Link from 'next/link'
-import Image from 'next/image'
-// import black from '../assets/images/logo/logo-black.png'
-// import white from '../assets/images/logo/logo-white2.png'
-// import author from '../assets/images/others/author.png'
+
 // import black from '../'
 // import black from '../'
 // import a from './A.png'
@@ -13,16 +9,16 @@ import { withTheme } from '../context/AppContext'
 export default withTheme(props => {
     const { context } = props;
     const { auth } = context;
+    console.log('ENV ---', process.env)
     return (
         <header className="header axil-header  header-light header-sticky header-with-shadow">
             <div className="header-wrap">
                 <div className="row justify-content-between align-items-center">
                     <div className="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-12">
                         <div className="logo">
-                            {/* <Link href='/'>
-                                <Image className="dark-logo" src={a} height='40%' style={{ width: '60%', height: '20%' }} alt="Blogar logo" />
-                                <Image className="light-logo" src={a} height='40%' style={{ width: '60%', height: '20%' }} alt="Blogar logo" />
-                            </Link> */}
+                            <Link href='/'>
+                                <img className="dark-logo" src={'https://i.pinimg.com/originals/12/d9/a9/12d9a922420b6a9ec08e9b0b6c0b06f3.png'} height='40%' style={{ width: '20%', height: '20%' }} alt="Blogar logo" />
+                            </Link>
                         </div>
                     </div>
 
@@ -50,12 +46,12 @@ export default withTheme(props => {
                             </form>
                             <ul className="metabar-block">
                                 <li className="icon"><Link href="/"><i className="fas fa-home"></i></Link></li>
-                                {auth ? <li className="icon"><Link href="/editor"><i className="fas fa-pencil-alt"></i></Link></li>: null}
-                                {/* {
+                                {auth ? <li className="icon"><Link to="/editor"><i className="fas fa-pencil-alt"></i></Link></li> : null}
+                                {
                                     auth ?
-                                        <li><Link onClick={() => { }} to={auth ? `/user/${auth.uid}` : '#'}><img src={auth.photoURL} alt="Author Images" /></Link></li> :
-                                        <li onClick={context.openGoogleLogin} className="icon"><Link to="#"><i className="fas fa-user-alt"></i></Link></li>
-                                } */}
+                                        <li><Link onClick={() => { }} href={auth ? `/user/${auth.uid}` : '#'}><img src={auth.photoURL} alt="Author Images" /></Link></li> :
+                                        <li onClick={context.openGoogleLogin} className="icon"><Link href="#"><i className="fas fa-user-alt"></i></Link></li>
+                                }
                             </ul>
                             <div className="hamburger-menu d-block d-xl-none">
                                 <div className="hamburger-inner">
