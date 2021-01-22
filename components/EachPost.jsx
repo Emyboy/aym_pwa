@@ -39,7 +39,7 @@ export default function EachPost({
         <article className="content-block post-list-view axil-control mt--30">
             {
                 data.imageURL ? <div className="post-thumbnail">
-                    <Link to={{
+                    <Link href={`/post/${data.title}/${data.id}`} to={{
                         pathname: `/post/${data.title}/${data.id}`,
                         state: data
                     }}>
@@ -61,7 +61,7 @@ export default function EachPost({
                     </div>
                 </div>
                 <h4 className="title">
-                    <Link to={{
+                    <Link href={`/post/${data.title}/${data.id}`} to={{
                         pathname: `/post/${data.title}/${data.id}`,
                         state: { ...data, user }
                     }}>{data.title}

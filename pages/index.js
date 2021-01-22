@@ -6,8 +6,10 @@ import { withTheme } from '../context/AppContext';
 import fire from '../FirebaseApp';
 
 import PostsLoading from '../components/PostsLoading';
+import Global from '../Global';
 
-export default withTheme(props => {
+const Home = (props => {
+	// console.log('PROPS --', props);
 	const [posts, setPosts] = useState([])
 
 	// useEffect(() => {
@@ -23,7 +25,6 @@ export default withTheme(props => {
 	//         })
 	// }, [])
 	// console.log(props);
-	const { context } = props;
 	return (
 		<div>
 			<div className="axil-post-list-area post-listview-visible-color axil-section-gap bg-color-white is-active">
@@ -39,7 +40,10 @@ export default withTheme(props => {
                 </a>
                 </div>
             </div> */}
-							{
+			{
+				props.data.map((val, i) => <EachPost data={val} key={i} />)
+			}
+							{/* {
 								context.recentPosts.length === 0 ?
 									<PostsLoading /> :
 									<>
@@ -50,7 +54,7 @@ export default withTheme(props => {
 											/>)
 										}
 									</>
-							}
+							} */}
 						</div>
 						<SidePanel type='popular' />
 					</div>
@@ -59,3 +63,14 @@ export default withTheme(props => {
 		</div>
 	)
 });
+
+Home.getInitialProps = async (ctx) => {
+	
+	const res = await fetch(Global.API_URL+'/api/posts/recent')
+	const json = await res.json()
+	// console.log('JSON ---', json)
+	return { data: json }
+}
+
+export default Home;
+
