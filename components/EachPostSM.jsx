@@ -9,19 +9,13 @@ export default function EachPostSM({
             {
                 data.imageURL ?
                     <div className="post-thumbnail">
-                        <Link to={{
-                        pathname: `/post/${data.title}/${data.id}`,
-                        state: data
-                    }}>
+                        <Link href={`/post/${data.title}/${data.id}`}>
                             <img src="assets/images/small-images/blog-sm-01.jpg" alt="Post Images" />
                         </Link>
                     </div> : null
             }
             <div className="post-content">
-                <h6 className="title"><Link to={{
-                        pathname: `/post/${data.title}/${data.id}`,
-                        state: data
-                    }}>{data.title}</Link></h6>
+                <h6 className="title"><Link href={`/post/${data.title}/${data.id}`}>{data.title}</Link></h6>
                 <div className="post-meta">
                     <ul className="post-meta-list">
                         <li>{new Date(data.createdAt).toLocaleDateString()}</li>

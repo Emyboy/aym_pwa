@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-
 var firebaseConfig = {
     apiKey: process.env.REACT_APP_APP_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,

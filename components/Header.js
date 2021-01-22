@@ -7,9 +7,9 @@ import Link from 'next/link'
 import { withTheme } from '../context/AppContext'
 
 export default withTheme(props => {
+    console.log('ENV ---', process.env.REACT_APP_SITE_NAME)
     const { context } = props;
     const { auth } = context;
-    console.log('ENV ---', process.env)
     return (
         <header className="header axil-header  header-light header-sticky header-with-shadow">
             <div className="header-wrap">
@@ -46,7 +46,7 @@ export default withTheme(props => {
                             </form>
                             <ul className="metabar-block">
                                 <li className="icon"><Link href="/"><i className="fas fa-home"></i></Link></li>
-                                {auth ? <li className="icon"><Link to="/editor"><i className="fas fa-pencil-alt"></i></Link></li> : null}
+                                {auth ? <li className="icon"><Link href="/editor"><i className="fas fa-pencil-alt"></i></Link></li> : null}
                                 {
                                     auth ?
                                         <li><Link onClick={() => { }} href={auth ? `/user/${auth.uid}` : '#'}><img src={auth.photoURL} alt="Author Images" /></Link></li> :
@@ -65,3 +65,14 @@ export default withTheme(props => {
         </header>
     )
 });
+
+
+// export function getServerSideProps() {
+    
+//     return {
+//         props: {
+//             hello: 'hi'
+//         }
+//     }
+// }
+

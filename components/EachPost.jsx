@@ -54,7 +54,7 @@ export default function EachPost({
                     <div className="post-cat-list">
                         {
                             cat ?
-                                <Link className="hover-flip-item-wrapper" to={`/category/${cat.value.toLowerCase()}`}>
+                                <Link className="hover-flip-item-wrapper" href={`/category/${cat.value.toLowerCase()}`}>
                                     <span className="hover-flip-item">
                                         <span data-text={cat.value.toUpperCase()}>{cat.value.toUpperCase()}</span>
                                     </span>
@@ -71,35 +71,35 @@ export default function EachPost({
                     >{data.title}
                     </Link>
                 </h4>
-                <div class="post-meta-wrapper">
-                    <div class="post-meta">
-                        {user ? <div class="post-author-avatar border-rounded">
+                <div className="post-meta-wrapper">
+                    <div className="post-meta">
+                        {user ? <div className="post-author-avatar border-rounded">
                             <img src={user.photoURL} alt="Author Images" style={{ width: '45px' }} />
                         </div> : <span>Loading..</span>}
-                        <div class="content">
-                            {user ? <h6 class="post-author-name">
-                                <Link class="hover-flip-item-wrapper" 
+                        <div className="content">
+                            {user ? <h6 className="post-author-name">
+                                <Link href={`/user/${user.uid}`} className="hover-flip-item-wrapper" 
                                 // to={{
                                 //     pathname: `/user/${user.uid}`,
                                 //     state: user
                                 // }}
                                 >
-                                    <span class="hover-flip-item">
+                                    <span className="hover-flip-item">
                                         <span data-text={user.displayName}>{user.displayName}</span>
                                     </span>
                                 </Link>
                             </h6> : null}
-                            <ul class="post-meta-list">
+                            <ul className="post-meta-list">
                                 <li>{new Date(data.createdAt).toLocaleDateString()}</li>
                                 <li>{data.views} views</li>
                             </ul>
                         </div>
                     </div>
-                    <ul class="social-share-transparent justify-content-end">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fas fa-link"></i></a></li>
+                    <ul className="social-share-transparent justify-content-end">
+                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i className="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i className="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i className="fas fa-link"></i></a></li>
                     </ul>
                 </div>
             </div>

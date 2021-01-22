@@ -86,7 +86,7 @@ export default withTheme(({
                                 console.log(val)
                                 return (
                                     <li className="cat-item" key={i}>
-                                        <Link to={`/category/${val.id}`} className="inner">
+                                        <Link href={`/category/${val.id}`} className="inner">
                                             {/* <div className="thumbnail">
                                                 <img src="assets/images/post-images/category-image-01.jpg" alt="" />
                                             </div> */}
