@@ -6,8 +6,13 @@ import App from 'next/app'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import '../assets/css/style.css';
+import '../assets/css/plugins/plugins.css'
+import '../assets/css/vendor/base.css'
+// import '../assets/css/vendor/font-awesome.css'
+import '../assets/css/vendor/slick-theme.css'
+import '../assets/css/vendor/slick.css'
 import '../assets/css/vendor/bootstrap.min.css';
+import '../assets/css/style.css';
 import '../assets/css/App.css';
 import Header from '../components/Header'
 

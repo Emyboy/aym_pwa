@@ -10,14 +10,10 @@ class MyDocument extends Document {
 					<meta name="theme-color" content="#3858f6" />
 					<meta
 						name="Description"
-						content="an example of NextJS app with 100% accessible lighthouse score"
+						content="AYM IS A Youth BLOG THAT SHOW THE WORLD YOUTHS WITH INCREDIBLE SKILLS"
 					/>
 					<link rel="manifest" href="static/manifest.json" />
 					<link rel="icon" href="static/img/favicon.ico" />
-					<link
-						rel="stylesheet"
-						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-					/>
 				</Head>
 				<body>
 					<Main />
