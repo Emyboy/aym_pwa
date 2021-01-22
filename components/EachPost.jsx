@@ -38,14 +38,16 @@ export default function EachPost({
     return (
         <article className="content-block post-list-view axil-control mt--30">
             {
-                data.imageURL ? <div className="post-thumbnail">
-                    <Link href={`/post/${data.title}/${data.id}`} to={{
-                        pathname: `/post/${data.title}/${data.id}`,
-                        state: data
-                    }}>
+                <div className="post-thumbnail">
+                    <Link href={`/post/${data.title}/${data.id}`} 
+                    //  to={{
+                    //     pathname: `/post/${data.title}/${data.id}`,
+                    //     state: data
+                    // }}
+                    >
                         <img src="https://cdn4.wpbeginner.com/wp-content/uploads/2018/07/whatisblog.png" alt="Post Images" />
                     </Link>
-                </div> : null
+                </div>
             }
             <div className="post-content">
                 <div className="post-cat">
@@ -61,10 +63,12 @@ export default function EachPost({
                     </div>
                 </div>
                 <h4 className="title">
-                    <Link href={`/post/${data.title}/${data.id}`} to={{
-                        pathname: `/post/${data.title}/${data.id}`,
-                        state: { ...data, user }
-                    }}>{data.title}
+                    <Link href={`/post/${data.title}/${data.id}`} 
+                    // to={{
+                    //     pathname: `/post/${data.title}/${data.id}`,
+                    //     state: { ...data, user }
+                    // }}
+                    >{data.title}
                     </Link>
                 </h4>
                 <div class="post-meta-wrapper">
@@ -74,10 +78,12 @@ export default function EachPost({
                         </div> : <span>Loading..</span>}
                         <div class="content">
                             {user ? <h6 class="post-author-name">
-                                <Link class="hover-flip-item-wrapper" to={{
-                                    pathname: `/user/${user.uid}`,
-                                    state: user
-                                }}>
+                                <Link class="hover-flip-item-wrapper" 
+                                // to={{
+                                //     pathname: `/user/${user.uid}`,
+                                //     state: user
+                                // }}
+                                >
                                     <span class="hover-flip-item">
                                         <span data-text={user.displayName}>{user.displayName}</span>
                                     </span>
