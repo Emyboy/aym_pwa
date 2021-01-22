@@ -11,7 +11,7 @@ import { v4 as uid } from 'uuid'
 import { Spinner } from 'react-activity'
 import { useRouter } from 'next/router'
 import Global from '../../../Global'
-
+import { NextSeo } from 'next-seo';
 
 const Details = withTheme(props => {
     const router = useRouter()
@@ -208,6 +208,10 @@ const Details = withTheme(props => {
         return (
             // <h1>Working</h1>
             <div className="post-single-wrapper axil-section-gap bg-color-white">
+                <NextSeo
+                    title={data.title}
+                    description={data.title}
+                />
                 
                 <div className="container">
                     <div className="row">
