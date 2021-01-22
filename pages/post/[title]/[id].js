@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 import Global from '../../../Global'
 import { NextSeo } from 'next-seo';
 
+
 const Details = withTheme(props => {
     const router = useRouter()
     // console.log('PROPS ---', props, router);
