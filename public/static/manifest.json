@@ -1,6 +1,6 @@
 {
-  "name": "NextSimpleStarter",
-  "short_name": "Next PWA",
+  "name": "African Youth Mind",
+  "short_name": "AYM",
   "icons": [
     {
       "src": "img/apple-touch-icon-120x120.png",
@@ -35,6 +35,6 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#673ab7",
+  "theme_color": "#3858f6",
   "background_color": "#EEE"
 }

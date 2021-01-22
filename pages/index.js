@@ -1,53 +1,61 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import SubHeading from '../components/SubHeading'
+import EachPost from '../components/EachPost';
+import SidePanel from '../components/SidePanel'
+import { withTheme } from '../context/AppContext';
+import fire from '../FirebaseApp';
 
-export default function index() {
+import PostsLoading from '../components/PostsLoading';
+
+export default withTheme(props => {
+	const [posts, setPosts] = useState([])
+
+	// useEffect(() => {
+	//     fire.firestore().collection('posts').orderBy('number', "desc").limit(5).get()
+	//         .then(res => {
+	//             const all = [];
+	//             res.forEach(val => all.push(val.data()));
+	//             setPosts(all);
+	//         })
+	//         .catch(err => {
+	//             console.log(err)
+	//             alert('Error Fetching data')
+	//         })
+	// }, [])
+	// console.log(props);
+	const { context } = props;
 	return (
-		<div className='container'>
-			<h1>Welcome To My App</h1>
-			<button className='btn btn-success'>Join</button>
-			<div class="content-block post-list-view axil-control mt--30">
-				<div class="post-thumbnail">
-					<a href="post-details.html">
-						<img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" alt="Post Images" />
-                                </a>
-                            </div>
-					<div class="post-content">
-						<div class="post-cat">
-							<div class="post-cat-list">
-								<a class="hover-flip-item-wrapper" href="#">
-									<span class="hover-flip-item">
-										<span data-text="FOOD">FOOD</span>
-									</span>
-								</a>
-							</div>
+		<div>
+			<div className="axil-post-list-area post-listview-visible-color axil-section-gap bg-color-white is-active">
+				<div className="container">
+					<SubHeading title='Recent Post' />
+					<hr />
+					<div className="row">
+						<div className="col-lg-8 col-xl-8">
+							{/* <div className="axil-banner">
+                <div className="thumbnail">
+                <a href="#">
+                <img className="w-100" src="https://cdn4.wpbeginner.com/wp-content/uploads/2018/07/whatisblog.png" alt="Banner Images" />
+                </a>
+                </div>
+            </div> */}
+							{
+								context.recentPosts.length === 0 ?
+									<PostsLoading /> :
+									<>
+										{
+											context.recentPosts.map((val, i) => <EachPost
+												key={i}
+												data={val}
+											/>)
+										}
+									</>
+							}
 						</div>
-						<h4 class="title"><a href="post-details.html">Security isn’t just a technology problem
-                                        it’s about design, too </a></h4>
-						<div class="post-meta-wrapper">
-							<div class="post-meta">
-								<div class="content">
-									<h6 class="post-author-name">
-										<a class="hover-flip-item-wrapper" href="author.html">
-											<span class="hover-flip-item">
-												<span data-text="Jane Ara">Jane Ara</span>
-											</span>
-										</a>
-									</h6>
-									<ul class="post-meta-list">
-										<li>Feb 17, 2019</li>
-										<li>3 min read</li>
-									</ul>
-								</div>
-							</div>
-							<ul class="social-share-transparent justify-content-end">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fas fa-link"></i></a></li>
-							</ul>
-						</div>
+						<SidePanel type='popular' />
 					</div>
 				</div>
+			</div>
 		</div>
 	)
-}
+});

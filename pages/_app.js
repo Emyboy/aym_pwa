@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { AppContextProvider } from '../context/AppContext'
 import Head from 'next/head'
 import App from 'next/app'
 import { createMuiTheme } from '@material-ui/core/styles'
@@ -8,6 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import '../assets/css/style.css';
 import '../assets/css/vendor/bootstrap.min.css';
 import '../assets/css/App.css';
+import Header from '../components/Header'
 
 export default class MyApp extends App {
 	static async getInitialProps({ Component, ctx }) {
@@ -53,7 +55,10 @@ export default class MyApp extends App {
 				</Head>
 				{/* <ThemeProvider theme={theme}> */}
 					{/* <CssBaseline> */}
+				<AppContextProvider>
+					<Header />
 						<Component {...pageProps} />
+				</AppContextProvider>
 					{/* </CssBaseline> */}
 				{/* </ThemeProvider> */}
 			</>
