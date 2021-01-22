@@ -20,6 +20,7 @@ export default function TextInput({
                 placeholder={placeholder}
                 onChange={e => onChange(e.target.value)}
                 disabled={disabled}
+                classname='border'
                 name={name}
             />
         </Form.Group>
