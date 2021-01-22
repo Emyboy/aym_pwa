@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom'
 import { AppContextProvider } from '../context/AppContext'
 import Head from 'next/head'
 import App from 'next/app'
-import { createMuiTheme } from '@material-ui/core/styles'
-import { ThemeProvider } from '@material-ui/styles'
+import 'react-activity/dist/react-activity.css';
+// import { createMuiTheme } from '@material-ui/core/styles'
+// import { ThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import '../assets/css/plugins/plugins.css'
 import '../assets/css/vendor/base.css'
@@ -15,6 +16,7 @@ import '../assets/css/vendor/bootstrap.min.css';
 import '../assets/css/style.css';
 import '../assets/css/App.css';
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default class MyApp extends App {
 	static async getInitialProps({ Component, ctx }) {
@@ -38,16 +40,16 @@ export default class MyApp extends App {
 	render() {
 		const { Component, pageProps } = this.props
 
-		const theme = createMuiTheme({
-			palette: {
-				background: {
-					default: '#EEE',
-				},
-				primary: {
-					main: '#673ab7',
-				},
-			},
-		})
+		// const theme = createMuiTheme({
+		// 	palette: {
+		// 		background: {
+		// 			default: '#EEE',
+		// 		},
+		// 		primary: {
+		// 			main: '#673ab7',
+		// 		},
+		// 	},
+		// })
 
 		return (
 			<>
@@ -64,6 +66,7 @@ export default class MyApp extends App {
 				<AppContextProvider>
 					<Header />
 						<Component {...pageProps} />
+					<Footer />
 				</AppContextProvider>
 					{/* </CssBaseline> */}
 				{/* </ThemeProvider> */}

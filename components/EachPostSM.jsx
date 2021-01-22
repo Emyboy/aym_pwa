@@ -7,12 +7,11 @@ export default function EachPostSM({
     return (
         <div className="content-block post-medium mb--20">
             {
-                data.imageURL ?
-                    <div className="post-thumbnail">
-                        <Link href={`/post/${data.title}/${data.id}`}>
-                            <img src="assets/images/small-images/blog-sm-01.jpg" alt="Post Images" />
-                        </Link>
-                    </div> : null
+                <div className="post-thumbnail">
+                    <Link href={`/post/${data.title}/${data.id}`}>
+                        <img src={data.image || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU'} alt="Post Images" />
+                    </Link>
+                </div>
             }
             <div className="post-content">
                 <h6 className="title"><Link href={`/post/${data.title}/${data.id}`}>{data.title}</Link></h6>

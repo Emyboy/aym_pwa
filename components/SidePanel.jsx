@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { withTheme } from '../context/AppContext';
 import fire from '../FirebaseApp'
 import EachPostSM from './EachPostSM';
+import EachCat from './EachCat';
 
 export default withTheme(({
     type,
@@ -83,18 +84,9 @@ export default withTheme(({
                     <ul>
                         {
                             cats.map((val, i) => {
-                                console.log(val)
+                                console.log('EACH CAT --', val)
                                 return (
-                                    <li className="cat-item" key={i}>
-                                        <Link href={`/category/${val.id}`} className="inner">
-                                            {/* <div className="thumbnail">
-                                                <img src="assets/images/post-images/category-image-01.jpg" alt="" />
-                                            </div> */}
-                                            <div className="content">
-                                                <h5 className="title">{val.value.toUpperCase()}</h5>
-                                            </div>
-                                        </Link>
-                                    </li>
+                                    <EachCat data={val} />
                                 )
                             })
                         }

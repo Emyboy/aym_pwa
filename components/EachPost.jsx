@@ -45,11 +45,11 @@ export default function EachPost({
                     //     state: data
                     // }}
                     >
-                        <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU' || data.image } alt="Post Images" />
+                        <img src={data.image || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU' } alt="Post Images" />
                     </Link>
                 </div>
             }
-            <div className="post-content">
+            <div className="post-content bg-white">
                 <div className="post-cat">
                     <div className="post-cat-list">
                         {

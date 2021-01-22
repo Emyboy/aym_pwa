@@ -13,7 +13,7 @@ const Home = (props => {
 
 	return (
 		<div>
-			<div className="axil-post-list-area post-listview-visible-color axil-section-gap bg-color-white is-active">
+			<div className="axil-review-area post-listview-visible-color axil-section-gap bg-color-grey is-active">
 				<div className="container">
 					<SubHeading title='Recent Post' />
 					<hr />
