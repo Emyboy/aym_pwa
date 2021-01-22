@@ -19,7 +19,7 @@ export default function CommentSection({
             .then(res => {
                 const list = [];
                 res.forEach(val => {
-                    console.log(val.data())
+                    // console.log(val.data())
                     list.push(val.data())
                 });
                 setState({ ...state, comments: list })

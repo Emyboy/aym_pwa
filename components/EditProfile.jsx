@@ -12,7 +12,7 @@ export default withTheme(({
     data,
     context
 }) => {
-    console.log('data ----', data);
+    // console.log('data ----', data);
     const [state, setState] = useState({
         loading: false,
         message: {

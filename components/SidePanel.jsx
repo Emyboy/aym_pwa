@@ -84,7 +84,7 @@ export default withTheme(({
                     <ul>
                         {
                             cats.map((val, i) => {
-                                console.log('EACH CAT --', val)
+                                // console.log('EACH CAT --', val)
                                 return (
                                     <EachCat data={val} />
                                 )

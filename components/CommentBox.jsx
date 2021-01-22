@@ -13,7 +13,7 @@ export default withTheme(props => {
     });
 
     const addComment = e => {
-        console.log('addding ---', state.comment)
+        // console.log('addding ---', state.comment)
         e.preventDefault();
         if (state.comment) {
             setState({ ...state, loading: true })

@@ -6,7 +6,7 @@ export default (req, res) => {
         query: { id, title },
     } = req
     
-    console.log('QUERY ---- ', id, title)
+    // console.log('QUERY ---- ', id, title)
     fire.firestore().collection('posts').where('id', '==', id).get()
     .then(data => {
         data.forEach(val => {

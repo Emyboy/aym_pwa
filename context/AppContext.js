@@ -85,13 +85,13 @@ export class AppContextProvider extends React.Component {
     }
 
     getRecentPost() {
-        console.log('GETTING POST...', process.env)
+        // console.log('GETTING POST...', process.env)
         fire.firestore().collection('posts').orderBy('number', "desc").limit(5).get()
             .then(res => {
-                console.log('res --', res.forEach(s => s))
+                // console.log('res --', res.forEach(s => s))
                 const all = [];
                 res.forEach(val => {
-                    console.log(val)
+                    // console.log(val)
                     all.push(val.data())
                 });
                 this.setState({
@@ -100,7 +100,7 @@ export class AppContextProvider extends React.Component {
                 localStorage.setItem('posts', JSON.stringify(all))
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
                 alert('Error Fetching data')
             })
     }
@@ -119,7 +119,7 @@ export class AppContextProvider extends React.Component {
                 this.setState({
                     categories: list
                 })
-                console.log('carts ---', list)
+                // console.log('carts ---', list)
                 localStorage.setItem('cat', JSON.stringify(list));
             })
             .catch(err => {
@@ -179,7 +179,7 @@ export class AppContextProvider extends React.Component {
                         } else {
                             fire.firestore().collection('users').add(userData)
                                 .then(res => {
-                                    console.log(res.id)
+                                    // console.log(res.id)
                                     if (res.id) {
                                         alert('logged in')
                                     }
@@ -194,7 +194,7 @@ export class AppContextProvider extends React.Component {
                     auth: userData
                 });
                 localStorage.setItem('auth', JSON.stringify(userData));
-                console.log(userData);
+                // console.log(userData);
             })
             .catch(error => {
                 // Handle Errors here.

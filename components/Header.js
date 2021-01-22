@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { withTheme } from '../context/AppContext'
 
 export default withTheme(props => {
-    console.log('ENV ---', process.env.REACT_APP_SITE_NAME)
+    // console.log('ENV ---', process.env.REACT_APP_SITE_NAME)
     const { context } = props;
     const { auth } = context;
     return (

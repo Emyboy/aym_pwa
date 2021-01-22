@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function CatCard({ data }) {
-    console.log(data);
+    // console.log(data);
     return (
         <div className="content-block image-rounded shadow m-2 p-3">
             <div className="post-thumbnail">
