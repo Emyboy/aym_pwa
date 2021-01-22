@@ -19,7 +19,7 @@ const Details = withTheme(props => {
     // console.log('PROPS ---', props, router);
     const { pid } = router.query
     const { location, context } = props;
-    const [data, setData] = useState(props.data);
+    // const [data, setData] = useState(props.data);
     const [user, setUser] = useState(null);
     const [cat, setCat] = useState(null);
     const [html, setHtml] = useState('')
@@ -180,30 +180,11 @@ const Details = withTheme(props => {
         }
     }
 
-    useEffect(() => {
-        // if (data) {
-        //     updateViewCount();
-        //     // updateCategoryView();
-        //     fetchUserData()
-        //     getCategory();
-        //     fetchLikeCount();
-        //     checkIfUserLikes()
-        // }
-        // if (location.state) {
-        //     setData(location.state);
-        //     setUser(location.state.user);
-        //     getCategory();
-        //     fetchLikeCount();
-        // } else {
-        //     fetchPostData()
-        // }
-        if(data){
-            // setHtml(require('html-react-parser').parse(data.html))
-            // setHtml(parse(data.html) )
-        }
+    // useEffect(() => {
+    //     console.log('PROPS ---', props)
+    // }, [data]);
 
-    }, [data]);
-
+    const { data } = props;
     if (data) {
         // fetchUserData()
         return (
@@ -213,7 +194,7 @@ const Details = withTheme(props => {
                     title={data.title}
                     description={data.title}
                 />
-                
+
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8">

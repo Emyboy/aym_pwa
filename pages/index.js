@@ -12,23 +12,22 @@ const Home = (props => {
 	const [posts, setPosts] = useState([])
 
 	return (
-		<h1><Link href='/route/emeka'>Go To Route</Link></h1>
-		// <div>
-		// 	<div className="axil-post-list-area post-listview-visible-color axil-section-gap bg-color-white is-active">
-		// 		<div className="container">
-		// 			<SubHeading title='Recent Post' />
-		// 			<hr />
-		// 			<div className="row">
-		// 				<div className="col-lg-8 col-xl-8">
-		// 					{
-		// 						props.data.map((val, i) => <EachPost data={val} key={i} />)
-		// 					}
-		// 				</div>
-		// 				<SidePanel type='popular' />
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// </div>
+		<div>
+			<div className="axil-post-list-area post-listview-visible-color axil-section-gap bg-color-white is-active">
+				<div className="container">
+					<SubHeading title='Recent Post' />
+					<hr />
+					<div className="row">
+						<div className="col-lg-8 col-xl-8">
+							{
+								props.data.map((val, i) => <EachPost data={val} key={i} />)
+							}
+						</div>
+						<SidePanel type='popular' />
+					</div>
+				</div>
+			</div>
+		</div>
 	)
 });
 
