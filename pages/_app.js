@@ -47,7 +47,7 @@ export default class MyApp extends App {
 		return (
 			<>
 				<Head>
-					<title>Todo App</title>
+					<title>African Youth Minds</title>
 					<meta
 						name="viewport"
 						content="width=device-width, initial-scale=1.0"
