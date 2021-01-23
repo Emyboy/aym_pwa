@@ -14,6 +14,7 @@ class MyDocument extends Document {
 					/>
 					<link rel="manifest" href="static/manifest.json" />
 					<link rel="icon" href="static/img/favicon.ico" />
+					<meta name="trafficjunky-site-verification" content="yut5uxvq8" />
 				</Head>
 				<body>
 					<Main />
