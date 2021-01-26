@@ -45,7 +45,7 @@ export default function EachPost({
                     //     state: data
                     // }}
                     >
-                        <img src={data.imageURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU'} alt="Post Images" style={{ maxHeight: '300px' }} />
+                        <img src={data.imageURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU'} alt="Post Images" style={{ maxHeight: '300px', minHeight: '200px' }} />
                     </Link>
                 </div>
             }

@@ -11,6 +11,7 @@ import { v4 as uid } from 'uuid'
 import { Spinner } from 'react-activity'
 import { useRouter } from 'next/router'
 import Global from '../../../Global'
+import Head from 'next/head'
 import { NextSeo } from 'next-seo';
 
 
@@ -194,6 +195,11 @@ const Details = withTheme(props => {
                     title={data.title}
                     description={data.title}
                 />
+                <Head>
+                    <meta property="og:title" content={data.title} />
+                    <meta property="og:description" content={data.description} />
+                    <meta property="og:image" content={data.imageURL} />
+                </Head>
 
                 <div className="container">
                     <div className="row">
@@ -213,7 +219,9 @@ const Details = withTheme(props => {
                                                             </a> : null} */}
                                                         </div>
                                                     </div>
-                                                    <img src={data.imageURL} />
+                                                    <div style={{ textAlign: 'center' }}>
+                                                        <img src={data.imageURL} />
+                                                    </div>
                                                     <h1 className="title">{data.title}</h1>
                                                 </div>
                                             </div>

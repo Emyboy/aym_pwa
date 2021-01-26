@@ -9,7 +9,7 @@ export default function EachPostSM({
             {
                 <div className="post-thumbnail">
                     <Link href={`/post/${data.title}/${data.id}`}>
-                        <img src={data.imageURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU'} alt="Post Images" />
+                        <img src={data.imageURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU'} alt="Post Images" style={{maxHeight: '100px', minHeight: '100px'}}/>
                     </Link>
                 </div>
             }
