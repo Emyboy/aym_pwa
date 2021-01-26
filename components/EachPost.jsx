@@ -32,20 +32,20 @@ export default function EachPost({
                 })
         };
         getCategory();
-    })
+        // console.log(data);
+    }, [user, cat])
 
-    // console.log(data)
     return (
         <article className="content-block post-list-view axil-control mt--30">
             {
                 <div className="post-thumbnail">
-                    <Link href={`/post/${data.title}/${data.id}`} 
+                    <Link href={`/post/${data.title}/${data.id}`}
                     //  to={{
                     //     pathname: `/post/${data.title}/${data.id}`,
                     //     state: data
                     // }}
                     >
-                        <img src={data.image || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU' } alt="Post Images" />
+                        <img src={data.imageURL || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx6ybpAzHalWhT4UMEkvg2MTvPYw6Fwnlg&usqp=CAU'} alt="Post Images" style={{ maxHeight: '300px' }} />
                     </Link>
                 </div>
             }
@@ -63,7 +63,7 @@ export default function EachPost({
                     </div>
                 </div>
                 <h4 className="title">
-                    <Link href={`/post/${data.title}/${data.id}`} 
+                    <Link href={`/post/${data.title}/${data.id}`}
                     // to={{
                     //     pathname: `/post/${data.title}/${data.id}`,
                     //     state: { ...data, user }
@@ -73,19 +73,22 @@ export default function EachPost({
                 </h4>
                 <div className="post-meta-wrapper">
                     <div className="post-meta">
-                        {user ? <div className="post-author-avatar border-rounded">
-                            <img src={user.photoURL} alt="Author Images" style={{ width: '45px' }} />
-                        </div> : <span>Loading..</span>}
+                        {/* {user ?
+                            <div className="post-author-avatar border-rounded">
+                                <img src={user.photoURL} alt="Author Images" style={{ width: '45px' }} />
+                                <span>by</span>
+                            </div> : <span>Loading..</span>} */}
                         <div className="content">
-                            {user ? <h6 className="post-author-name">
-                                <Link href={`/user/${user.uid}`} className="hover-flip-item-wrapper" 
+                            {user ? <h6 className="post-author-name row ml-1">
+                                <small>by </small>{' '}
+                                {' '}<Link href={`/user/${user.uid}`} className="hover-flip-item-wrapper"
                                 // to={{
                                 //     pathname: `/user/${user.uid}`,
                                 //     state: user
                                 // }}
                                 >
                                     <span className="hover-flip-item">
-                                        <span data-text={user.displayName}>{user.displayName}</span>
+                                       {' '} <span data-text={user.displayName}>{user.displayName}</span>
                                     </span>
                                 </Link>
                             </h6> : null}

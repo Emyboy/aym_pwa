@@ -12,7 +12,7 @@ export default function TextArea({
         <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>{label}</Form.Label>
             <Form.Control
-                style={{ background: '#f0f2f5' }}
+                style={{ background: 'white' }}
                 as="textarea"
                 rows={3}
                 disabled={disabled}

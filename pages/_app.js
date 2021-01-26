@@ -41,21 +41,9 @@ export default class MyApp extends App {
 	render() {
 		const { Component, pageProps } = this.props;
 
-		// const theme = createMuiTheme({
-		// 	palette: {
-		// 		background: {
-		// 			default: '#EEE',
-		// 		},
-		// 		primary: {
-		// 			main: '#673ab7',
-		// 		},
-		// 	},
-		// })
-
 		return (
 			<>
 				<Head>
-					{/* <title>African Youth Minds</title> */}
 					<meta
 						name="viewport"
 						content="width=device-width, initial-scale=1.0"
@@ -74,8 +62,6 @@ export default class MyApp extends App {
 						<Component {...pageProps} />
 					<Footer />
 				</AppContextProvider>
-					{/* </CssBaseline> */}
-				{/* </ThemeProvider> */}
 			</>
 		)
 	}

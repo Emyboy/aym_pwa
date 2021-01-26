@@ -213,6 +213,7 @@ const Details = withTheme(props => {
                                                             </a> : null} */}
                                                         </div>
                                                     </div>
+                                                    <img src={data.imageURL} />
                                                     <h1 className="title">{data.title}</h1>
                                                 </div>
                                             </div>
